@@ -1,0 +1,29 @@
+# Godot 4 specific ignores
+.godot/
+*.translation
+*.import
+
+# Mono
+.mono/
+data_*/
+mono_crash.*.json
+
+# Generated files
+*.exe
+*.pck
+*.zip
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+*.tmp
+
+# User files
+user_settings.json

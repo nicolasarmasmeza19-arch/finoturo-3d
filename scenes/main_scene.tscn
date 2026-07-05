@@ -1,0 +1,36 @@
+[gd_scene load_steps=3 format=3 uid="uid://b1h23q2r8p2rq"]
+
+[ext_resource type="Script" path="res://scripts/managers/GameManager.gd"]
+[ext_resource type="Script" path="res://scripts/economy/EconomyManager.gd"]
+
+[node name="MainScene" type="Node3D"]
+
+[node name="GameManager" type="Node" parent="."]
+script = SubResource("GDScript")
+
+[node name="EconomyManager" type="Node" parent="GameManager"]
+script = SubResource("GDScript")
+
+[node name="MissionManager" type="Node" parent="GameManager"]
+script = SubResource("GDScript")
+
+[node name="UIManager" type="CanvasLayer" parent="GameManager"]
+script = SubResource("GDScript")
+
+[node name="World" type="Node3D" parent="."]
+
+[node name="Ground" type="CSGBox3D" parent="World"]
+size = Vector3(100, 1, 100)
+
+[node name="Player" type="CharacterBody3D" parent="World"]
+position = Vector3(0, 2, 0)
+script = SubResource("GDScript")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="World/Player"]
+
+[node name="Camera3D" type="Camera3D" parent="World/Player"]
+position = Vector3(0, 0.6, 0)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="World"]
+position = Vector3(10, 10, 10)
+shadow_enabled = true
